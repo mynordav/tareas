@@ -1,6 +1,6 @@
 module ClockDivider
 #(
-	parameter OUT_FREQUENCY = 1,
+	parameter OUT_FREQUENCY = 100,
 	parameter IN_FREQUENCY = 50000000
 )
 (
