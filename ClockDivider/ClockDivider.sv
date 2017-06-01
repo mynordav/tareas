@@ -1,6 +1,6 @@
 module ClockDivider
 #(
-	parameter OUT_FREQUENCY = 100,
+	parameter OUT_FREQUENCY = 1,
 	parameter IN_FREQUENCY = 50000000
 )
 (
@@ -20,7 +20,7 @@ always_ff@(posedge clk_in or negedge rst) begin
 		counter <= 0;
 	end
 	else begin 
-		if(counter == MAX_COUNT) begin
+		if(counter == MAX_COUNT - 1) begin
 			clk <= ~clk;
 			counter <= 0;
 		end
@@ -28,6 +28,8 @@ always_ff@(posedge clk_in or negedge rst) begin
 			counter++;
 	end
 end
+
+
 endmodule
 
 
